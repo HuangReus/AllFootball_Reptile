@@ -7,14 +7,15 @@ html.encoding='utf-8'
 
 #print(html.text)
 
-file=open('log.txt','w')
+file=open('log.txt','w+')
 
 news=re.findall('target="_blank" class="pc_count">(.*?)</a>',html.text)
 
-file.writelines(news)
+#file.writelines(news)
 
-#for each in news:
-#    print(each)
+for each in news:
+    file.write(each+'\n')
+    #print(each)
 
 file.close()
 
