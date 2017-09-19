@@ -35,7 +35,7 @@ def main():
 #for each in news:
 #    file.write(each+'\n')
 
-        now=time.strftime("%Y%m%d%H:%M:%S",time.localtime(time.time()))
+        now=time.strftime("%Y%m%d%H%M%S",time.localtime(time.time()))
         os.mkdir(now,0o777)
 
         football_news=selector.xpath('//div[@id="news_list"]/ol/li/h2/a/@href ')
@@ -60,6 +60,7 @@ def main():
 
             selector=etree.HTML(news_html.text)
             news_content=selector.xpath('//div[@id="main"]/div[@id="con"]/div/div/div/p/text()')
+            print(type(news_content))
 
             new_file.writelines(news_content)
             new_file.close()
