@@ -62,7 +62,7 @@ def main():
             news_content=selector.xpath('//div[@id="main"]/div[@id="con"]/div/div/div/p/text()')
             print(type(news_content))
 
-            new_file.writelines(news_content)
+            new_file.writelines(news_content.encode('utf-8'))
             new_file.close()
 
         time.sleep(3600)
