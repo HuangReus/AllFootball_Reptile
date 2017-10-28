@@ -54,6 +54,8 @@ def main():
 
 
         for i in range(0,len(news_title)):
+            re.sub("/","-",news_title[i])
+            news_title[i].encode('utf-8')
             new_file=open(file_path+'/'+news_title[i]+'.txt','w')
 
             news_html=requests.get(url=football_news[i],headers=headers)
@@ -64,7 +66,7 @@ def main():
             #print(type(news_content))
 
             for line in news_content:
-                new_file.write(line.encode('utf-8').replace('/',''))
+                new_file.write(line)
             new_file.close()
 
         time.sleep(3600)
