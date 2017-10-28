@@ -66,7 +66,7 @@ def main():
             #print(type(news_content))
 
             for line in news_content:
-                new_file.write(line)
+                new_file.write(line.encode('utf-8'))
             new_file.close()
 
         time.sleep(3600)
