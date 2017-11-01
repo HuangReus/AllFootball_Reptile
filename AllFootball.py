@@ -54,9 +54,9 @@ def main():
 
 
         for i in range(0,len(news_title)):
-            re.sub("/","-",news_title[i])
             news_title[i].encode('utf-8')
-            new_file=open(file_path+'/'+news_title[i]+'.txt','w')
+            title=re.sub('/','-',news_title[i])
+            new_file=open(file_path+'/'+title+'.txt','w')
 
             news_html=requests.get(url=football_news[i],headers=headers)
             news_html.encoding='utf-8'
